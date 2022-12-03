@@ -1,6 +1,6 @@
 import { data, Disco, fetchTasks, Task } from '@epfml/discojs-node'
 
-import { startServer } from './start_server'
+// import { startServer } from './start_server'
 import { foodData } from './data'
 
 /**
@@ -17,26 +17,46 @@ async function runUser (url: URL, task: Task, dataset: data.DataSplit): Promise<
 }
 
 async function main (): Promise<void> {
-  
-  const [server, serverUrl] = await startServer()
+  const serverUrl = new URL('', `http://localhost:8080`)
   const tasks = await fetchTasks(serverUrl)
-  
-  // Choose your task to train
-  const task = tasks.get('food') as Task
 
-  const dataset = await foodData(task)
+  // console.log("tasks", tasks)
+   // Choose your task to train
+   const task = tasks.get('food') as Task
 
-  // Add more users to the list to simulate more clients
-  await Promise.all([
-    runUser(serverUrl, task, dataset),
-    runUser(serverUrl, task, dataset),
-    runUser(serverUrl, task, dataset)
-  ])
 
-  await new Promise((resolve, reject) => {
-    server.once('close', resolve)
-    server.close(reject)
-  })
+   const dataset = await foodData(task)
+ 
+   // Add more users to the list to simulate more clients
+   await Promise.all([
+     runUser(serverUrl, task, dataset),
+    //  runUser(serverUrl, task, dataset),
+    //  runUser(serverUrl, task, dataset)
+   ])
 }
+
+
+// async function main (): Promise<void> {
+  
+//   const [server, serverUrl] = await startServer()
+//   const tasks = await fetchTasks(serverUrl)
+  
+//   // Choose your task to train
+//   const task = tasks.get('food') as Task
+
+//   const dataset = await foodData(task)
+
+//   // Add more users to the list to simulate more clients
+//   await Promise.all([
+//     runUser(serverUrl, task, dataset),
+//     runUser(serverUrl, task, dataset),
+//     runUser(serverUrl, task, dataset)
+//   ])
+
+//   await new Promise((resolve, reject) => {
+//     server.once('close', resolve)
+//     server.close(reject)
+//   })
+// }
 
 main().catch(console.error)
