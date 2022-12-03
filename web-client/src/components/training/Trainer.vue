@@ -1,42 +1,27 @@
 <template>
   <div>
     <!-- Train Button -->
-    <div
-      v-if="!startedTraining"
-      class="grid grid-cols-1 md:grid-cols-2 gap-8 py-6 items-center"
-    >
+    <div v-if="!startedTraining" class="grid grid-cols-1 md:grid-cols-2 gap-8 py-6 items-center">
       <div class="text-center">
-        <CustomButton
-          @click="startTraining(false)"
-        >
+        <CustomButton @click="startTraining(false)">
           Train alone
         </CustomButton>
       </div>
       <div class="text-center">
-        <CustomButton
-          @click="startTraining(true)"
-        >
+        <CustomButton @click="startTraining(true)">
           Train collaboratively
         </CustomButton>
       </div>
     </div>
-    <div
-      v-else
-      class="text-center py-6"
-    >
-      <CustomButton
-        @click="pauseTraining()"
-      >
+    <div v-else class="text-center py-6">
+      <CustomButton @click="pauseTraining()">
         Stop <span v-if="distributedTraining">Collaborative Training</span><span v-else>Training</span>
       </CustomButton>
     </div>
 
     <!-- Training Board -->
     <div>
-      <TrainingInformation
-        :training-informant="trainingInformant"
-        :has-validation-data="hasValidationData"
-      />
+      <TrainingInformation :training-informant="trainingInformant" :has-validation-data="hasValidationData" />
     </div>
   </div>
 </template>
@@ -68,11 +53,11 @@ export default defineComponent({
       default: undefined
     }
   },
-  data (): {
+  data(): {
     distributedTraining: boolean,
     startedTraining: boolean,
     trainingInformant: TrainingInformant
-    } {
+  } {
     return {
       distributedTraining: false,
       startedTraining: false,
@@ -81,13 +66,13 @@ export default defineComponent({
   },
   computed: {
     ...mapStores(useMemoryStore),
-    client (): Client {
+    client(): Client {
       return getClient(this.scheme, this.task)
     },
-    memory (): Memory {
+    memory(): Memory {
       return this.memoryStore.useIndexedDB ? new browser.IndexedDB() : new EmptyMemory()
     },
-    disco (): Disco {
+    disco(): Disco {
       return new Disco(
         this.task,
         {
@@ -99,7 +84,7 @@ export default defineComponent({
         }
       )
     },
-    scheme (): TrainingSchemes {
+    scheme(): TrainingSchemes {
       if (this.distributedTraining) {
         switch (this.task.trainingInformation?.scheme) {
           case 'Federated':
@@ -111,12 +96,12 @@ export default defineComponent({
       // default scheme
       return TrainingSchemes.LOCAL
     },
-    hasValidationData (): boolean {
+    hasValidationData(): boolean {
       return this.task?.trainingInformation?.validationSplit > 0
     }
   },
   watch: {
-    scheme (newScheme: TrainingSchemes): void {
+    scheme(newScheme: TrainingSchemes): void {
       const args = [this.task.taskID, 10] as const
       switch (newScheme) {
         case TrainingSchemes.FEDERATED:
@@ -132,7 +117,7 @@ export default defineComponent({
     }
   },
   methods: {
-    async startTraining (distributedTraining: boolean): Promise<void> {
+    async startTraining(distributedTraining: boolean): Promise<void> {
       this.distributedTraining = distributedTraining
 
       if (!this.datasetBuilder.isBuilt()) {
@@ -145,7 +130,7 @@ export default defineComponent({
           return
         }
       }
-
+      console.log('Starting training')
       try {
         this.startedTraining = true
         await this.disco.fit(this.dataset)
@@ -156,11 +141,11 @@ export default defineComponent({
         this.cleanState()
       }
     },
-    cleanState (): void {
+    cleanState(): void {
       this.distributedTraining = false
       this.startedTraining = false
     },
-    async pauseTraining (): Promise<void> {
+    async pauseTraining(): Promise<void> {
       await this.disco.pause()
       this.isTraining = false
     }
