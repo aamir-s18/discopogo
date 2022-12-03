@@ -8,8 +8,8 @@ defineProps({
 </script>
 
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
+  <div>
+    <h1>👋 Hey foodlab alpine! </h1>
     <h3>
       You’ve successfully created a project with
       <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
@@ -25,7 +25,7 @@ h1 {
   top: -10px;
 }
 
-h3 {
+👋🏾 h3 {
   font-size: 1.2rem;
 }
 
@@ -35,6 +35,7 @@ h3 {
 }
 
 @media (min-width: 1024px) {
+
   .greetings h1,
   .greetings h3 {
     text-align: left;
