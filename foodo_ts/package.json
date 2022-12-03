@@ -10,8 +10,26 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@epfml/disco-server": "^2.1.1",
+    "@epfml/discojs-node": "^2.1.1",
+    "@tensorflow/tfjs": "^4.1.0",
+    "aws-sdk": "^2.1267.0",
+    "mock-aws-s3": "^4.0.2",
+    "nock": "^13.2.9",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "@koush/wrtc": "0.5",
+    "@tensorflow/tfjs-node": "4",
+    "@types/msgpack-lite": "0.1",
+    "axios": "0.27",
+    "immutable": "4",
+    "isomorphic-ws": "4",
+    "msgpack-lite": "0.1",
+    "simple-peer": "9",
+    "tslib": "2",
+    "url": "0.11",
+    "uuid": "8",
+    "ws": "8"
   },
   "devDependencies": {
     "@types/node": "^18.11.9",

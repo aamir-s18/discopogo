@@ -1,4 +1,5 @@
 import { data, Disco, fetchTasks, Task } from '@epfml/discojs-node'
+import { run } from 'node:test'
 
 // import { startServer } from './start_server'
 import { foodData } from './data'
@@ -59,4 +60,4 @@ export async function runClient(): Promise<void> {
 //   })
 // }
 
-main().catch(console.error)
+runClient().catch(console.error)
