@@ -2,12 +2,12 @@
   "compilerOptions": {
     "target": "es6",
     "jsx": "preserve",
+    "module": "esnext",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
     "types": [
-      "cypress",
       "node"
     ],
     "sourceMap": true,
