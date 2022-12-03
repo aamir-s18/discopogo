@@ -9,7 +9,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@epfml/disco-server": "2",
+    "@epfml/disco-server": "^2.1.1",
     "@epfml/discojs-node": "2",
     "rand-seed": "1",
     "tslib": "2"

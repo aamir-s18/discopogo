@@ -1,7 +1,7 @@
 import { data, Disco, fetchTasks, Task } from '@epfml/discojs-node'
 
 import { startServer } from './start_server'
-import { loadData } from './data'
+import { foodData } from './data'
 
 /**
  * Example of discojs API, we load data, build the appropriate loggers, the disco object
@@ -22,12 +22,13 @@ async function main (): Promise<void> {
   const tasks = await fetchTasks(serverUrl)
   
   // Choose your task to train
-  const task = tasks.get('simple_face') as Task
+  const task = tasks.get('food') as Task
 
-  const dataset = await loadData(task)
+  const dataset = await foodData(task)
 
   // Add more users to the list to simulate more clients
   await Promise.all([
+    runUser(serverUrl, task, dataset),
     runUser(serverUrl, task, dataset),
     runUser(serverUrl, task, dataset)
   ])

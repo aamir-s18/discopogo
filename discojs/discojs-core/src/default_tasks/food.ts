@@ -31,8 +31,8 @@ export const food: TaskProvider = {
                 batchSize: 1,
                 preprocessingFunctions: [],
                 modelCompileData: {
-                    optimizer: 'rmsprop',
-                    loss: 'binaryCrossentropy',
+                    optimizer: 'adam',
+                    loss: 'meanSquaredError',
                     metrics: ['accuracy']
                 },
                 dataType: 'tabular',
