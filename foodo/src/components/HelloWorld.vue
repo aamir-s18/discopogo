@@ -6,15 +6,44 @@ defineProps({
   }
 })
 </script>
-
+<script>
+export default {
+  data: function () {
+    return {
+      chartOptions: {
+        chart: {
+          id: "vuechart-example",
+        },
+        xaxis: {
+          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+        },
+      },
+      series: [
+        {
+          name: "series-1",
+          data: [30, 40, 35, 50, 49, 60, 70, 91],
+        },
+      ],
+    };
+  },
+};
+</script>
 <template>
   <div>
     <h1>👋 Hey foodlab alpine! </h1>
+    <div class="p2 bg-white border rounded">
+      <h2><b>1010</b> Meals today!</h2>
+
+      <apexchart width="75%" type="bar" :options="chartOptions" :series="series">
+      </apexchart>
+
+    </div>
     <h3>
       You’ve successfully created a project with
       <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
       <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
     </h3>
+
   </div>
 </template>
 
