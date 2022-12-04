@@ -37,7 +37,7 @@
 <script lang="ts">
 
 import { computed, defineProps, ref } from 'vue'
-import { data, Task, fetchTasks, browser, tf, Disco } from '@epfml/discojs'
+import { data, Task, fetchTasks, browser, tf, Disco, TrainingSchemes } from '@epfml/discojs'
 import * as d3 from 'd3'
 import { DatasetBuilder, DataSplit } from '@epfml/discojs/dist/core/dataset'
 
@@ -134,7 +134,7 @@ export default {
             console.log("train")
             async function runUser(url: URL, task: Task, dataset: data.DataSplit): Promise<void> {
                 // Start federated training
-                const disco = new Disco(task, { url })
+                const disco = new Disco(task, { url, scheme: TrainingSchemes.FEDERATED },)
                 await disco.fit(dataset)
 
 

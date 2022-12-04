@@ -8,7 +8,14 @@ export default {
                     bar: {
                         borderRadius: 10,
                         borderRadiusApplication: "end"
-                    }
+                    },
+
+                },
+                legend: {
+                    markers: {
+                        fillColors: ['#eb6243', "#008FFB"],
+                    },
+
                 },
                 fill: {
                     opacity: 1,
@@ -16,8 +23,18 @@ export default {
                 },
                 stroke: {
                     show: true,
-                    width: 2,
-                    colors: ['transparent']
+                    width: [0, 4],
+                    colors: ['transparent', "#008FFB"]
+                },
+                title: {
+                    text: 'Traffic Sources'
+                },
+                dataLabels: {
+                    enabled: true,
+                    enabledOnSeries: [1],
+                    style: {
+                        colors: ['#008FFB'],
+                    },
                 },
                 chart: {
                     toolbar: {
@@ -26,11 +43,24 @@ export default {
                     id: "vuechart-example",
                 },
                 xaxis: {
-                    categories: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+                    categories: ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00"],
+                    lines: {
+                        show: false,
+                    },
+                    titles: {
+                        text: 'Hours'
+                    }
+                },
+                yaxis: {
+                    title: {
+                        text: 'Sales',
+                    },
                     lines: {
                         show: false,
                     }
+
                 },
+
             },
             plotOptions: {
                 bar: {
@@ -38,10 +68,17 @@ export default {
                     borderRadiusApplication: "around",
                 },
             },
+
             series: [
                 {
-                    name: "series-1",
+                    name: "Predictions",
+                    type: "bar",
                     data: [10, 54, 232, 250, 154, 120, 87, 98, 230, 180, 142, 88],
+                },
+                {
+                    name: "Real Sales",
+                    type: "line",
+                    data: [7, 60, 270, 240, 150, 111, 99, 70, 216, 199, 123, 76],
                 },
             ],
         };
@@ -73,7 +110,7 @@ export default {
             </div>
         </div>
         <div>
-            <apexchart class="mt-6" width="100%" height="400" type="bar" :options="chartOptions" :series="series">
+            <apexchart type="line" class="mt-6" width="100%" height="400" :options="chartOptions" :series="series">
             </apexchart>
         </div>
         <h5 class="is-size-4 mt-3">The favorite food for today.</h5>

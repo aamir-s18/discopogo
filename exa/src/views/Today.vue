@@ -4,6 +4,18 @@ export default {
   data: function () {
     return {
       chartOptions: {
+        title: {
+          text: 'Traffic Sources'
+        },
+        yaxis: {
+          title: {
+            text: 'Sales',
+          },
+          lines: {
+            show: false,
+          }
+
+        },
         plotOptions: {
           bar: {
             borderRadius: 10,
@@ -26,7 +38,7 @@ export default {
           id: "vuechart-example",
         },
         xaxis: {
-          categories: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+          categories: ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00"],
           lines: {
             show: false,
           }
