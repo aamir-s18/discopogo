@@ -136,9 +136,6 @@ UI/.DS_Store
 
 node_modules/
 
-# model files on server
-weights.bin
-model.json
 
 # example training data
 example_training_data/
