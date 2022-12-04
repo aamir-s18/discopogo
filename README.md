@@ -11,7 +11,7 @@ PredicTable works inside **DISCO**,to run federated learning without sharing any
 
 
 ## Quick Start
-We provide a run_server.sh and a run_client.sh to help launch the project.
+We provide a [`run_server.sh`](run_server.sh) and a [`run_client.sh`](run_client.sh) to help launch the project.
 Firstly run run_server.sh and then run run_client.sh when you want to create a new client. Note that each time you need to open a new terminal window to run the bash script.
 
 The detailed commands for running is as below:
