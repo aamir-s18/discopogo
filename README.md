@@ -1,9 +1,9 @@
 # **PredicTable** 
 
 
-We created PredicTable, a web application for restaurant to predict future sales, to help reduce overproduction and create a menu plan tailored for the customers and with this helps to make the world a bit more sustainable. PredicTable uses **DISCO**, to run federated learning without sharing any original data from the restaurants, so that they can keep their privacy.
+We created PredicTable, a web application for restaurants to predict future sales, to help reduce overproduction and create a menu plan tailored for the customers and with this help make the world a bit more sustainable. PredicTable uses **DISCO**, to run federated learning without sharing any private data from the restaurants, so that they can keep their privacy.
 
-This project and MVP showcases that Disco can also work outside of a research setting and can provide real value in the real world.
+This project and MVP showcase that Disco can also work outside of a research setting and provide real value in the real world.
 
 :question: **WHY DISCO?** 
 - To build deep learning models across private datasets without compromising data privacy, ownership, sovereignty, or model performance
@@ -11,9 +11,9 @@ This project and MVP showcases that Disco can also work outside of a research se
 
 ## Quick Start
 We provide a [`run_server.sh`](run_server.sh) and a [`run_client.sh`](run_client.sh) to help launch the project.
-Firstly run run_server.sh and then run run_client.sh when you want to create a new client. Note that each time you need to open a new terminal window to run the bash script.
+Firstly run run_server.sh and then run run_client.sh when you want to create a new client. Note that each time you need to open a new terminal window to run a bash script.
 
-The detailed commands for running is as below:
+The detailed commands for running are as below:
 ```
 cd disco
 nvm use
@@ -39,7 +39,7 @@ In the folder [`exa`](exa/) you can find the implementation of our project. For 
 
 ## Some details about implementation
 
-We took some part of the [web-client](https://github.com/epfml/disco/tree/develop/web-client) to make this project possible. The training is working and is tested with multiple inputs for a simple linear regression model. The frontend is MVP to show what can be possible with our project and how we can use Disco for non-traditional and real life related tasks. We used Vue and TypeScript to have maximal compatibility with Disco. Also the model is here a MVP with dummy data, to proof that Disco could work in this setting and is capable of solving tasks outside of the scientific environment and can provide a value to economy and sustainability.
+We took some part of the [web-client](https://github.com/epfml/disco/tree/develop/web-client) to make this project possible. The training is working and is tested with multiple inputs for a simple linear regression model. The frontend is MVP to show what can be possible with our project and how we can use Disco for non-traditional and real-life related tasks. We used Vue and TypeScript to have maximal compatibility with Disco. Also the model is here a MVP with dummy data, to prove that Disco could work in this setting and is capable of solving tasks outside of the scientific environment and provide value to economy and sustainability.
 
 
 
