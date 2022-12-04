@@ -1,14 +1,13 @@
 # **PredicTable** 
 
 
-We created PredicTable, a web application for resaurant to predict future sales, to help reduce overproduction and create a menu plan tailored for the customers.
+We created PredicTable, a web application for restaurant to predict future sales, to help reduce overproduction and create a menu plan tailored for the customers and with this helps to make the world a bit more sustainable. PredicTable uses **DISCO**, to run federated learning without sharing any original data from the restaurants, so that they can keep their privacy.
 
-PredicTable works inside **DISCO**,to run federated learning without sharing any original data from the resaurant, so that they can keep their privacy.
+This project and MVP showcases that Disco can also work outside of a research setting and can provide real value in the real world.
 
 :question: **WHY DISCO?** 
 - To build deep learning models across private datasets without compromising data privacy, ownership, sovereignty, or model performance
 - To create an easy-to-use platform that allows non-specialists to participate in collaborative learning
-
 
 ## Quick Start
 We provide a [`run_server.sh`](run_server.sh) and a [`run_client.sh`](run_client.sh) to help launch the project.
@@ -31,6 +30,8 @@ npm ci --legacy-peer-deps
 npm link ../discojs/discojs-node
 npm run dev
 ```
+
+Please ensure to have `nvm` and `npm` installed. It can happen that you get errors and need to install additional packages.  
 
 ## How to train
 
