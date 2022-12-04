@@ -1,40 +1,73 @@
-<script setup lang="ts">
-defineProps<{
-  msg: string
-}>()
+<script>
+
+export default {
+  data: function () {
+    return {
+      chartOptions: {
+        plotOptions: {
+          bar: {
+            borderRadius: 10,
+            borderRadiusApplication: "end"
+          }
+        },
+        fill: {
+          opacity: 1,
+          colors: ["#eb6243"]
+        },
+        stroke: {
+          show: true,
+          width: 2,
+          colors: ['transparent']
+        },
+        chart: {
+          toolbar: {
+            show: false
+          },
+          id: "vuechart-example",
+        },
+        xaxis: {
+          categories: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+          lines: {
+            show: false,
+          }
+        },
+      },
+      plotOptions: {
+        bar: {
+          borderRadius: 10,
+          borderRadiusApplication: "around",
+        },
+      },
+      series: [
+        {
+          name: "series-1",
+          data: [30, 40, 35, 50, 49, 60, 70, 91, 125, 110, 120, 150],
+        },
+      ],
+    };
+  },
+};
+
 </script>
 
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>. What's next?
-    </h3>
+
+  <div class="content mt-6">
+    <div class="columns">
+      <div class="column is-two-thirds">
+        <RouterLink to="/">
+          <h1 class="h1">👋🏾 Hey Piano!</h1>
+        </RouterLink>
+      </div>
+      <div class="column is-one-third" style="text-align:right">
+
+        <button class="button is-light mr-2">🚀 Stats</button>
+
+        <RouterLink to="/train">
+          <button class=" button is-primary">Train your model!</button>
+        </RouterLink>
+
+      </div>
+    </div>
   </div>
 </template>
-
-<style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  top: -10px;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
-}
-</style>

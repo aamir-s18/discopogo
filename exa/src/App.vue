@@ -1,85 +1,93 @@
+
+
+
+
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div class="container is-max-desktop">
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <HelloWorld />
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+    <RouterView v-slot="{ Component }">
+      <Component :is="Component"> </Component>
+      <!-- <Transition name="route" mode="out-in">
+        <Component :is="Component"> </Component>
+      </Transition> -->
+    </RouterView>
+    <div class="columns">
+      <div class="column is-full">
+        <p class="mt-6 mb-4 has-text-centered">Made with <a href="">🪩</a> in Lausanne.</p>
+      </div>
+
     </div>
-  </header>
+  </div>
 
-  <RouterView />
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+#rigth {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
+.center {
   text-align: center;
-  margin-top: 2rem;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+a {
+  position: relative;
+  color: #000;
+  text-decoration: none;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+a:hover {
+  color: #000;
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(0);
+  transform-origin: top left;
+  transition: transform 0.3s ease;
 }
 
-nav a:first-of-type {
-  border: 0;
+a:hover::before {
+  transform: scaleX(1);
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+a:visited {
+  color: black;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+.route-enter-from {
+  opacity: 0;
+  transform: translateX(100px);
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.route-enter-active {
+  transition: all 0.3s ease-out;
+}
 
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
+.route-leave-to {
+  opacity: 0;
+  transform: translateX(-100px);
+}
 
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.route-leave-active {
+  transition: all 0.3s ease-in;
 }
 </style>

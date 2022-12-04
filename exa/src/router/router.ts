@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 /* eslint-disable */
 export const router = createRouter({
@@ -8,15 +7,31 @@ export const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: () => import('../views/Today.vue')
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/tomorrow',
+      name: 'tomorrow',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      component: () => import('../views/Tomorrow.vue')
+    },
+    {
+      path: '/yesterday',
+      name: 'yesterday',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/Yesterday.vue')
+    },
+    {
+      path: '/train',
+      name: 'train',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/FileUpload.vue')
     }
   ]
 })

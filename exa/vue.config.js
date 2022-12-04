@@ -8,6 +8,7 @@ module.exports = {
   configureWebpack: {
 
     resolve: {
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
       fallback: {
         crypto: require.resolve('crypto-browserify'),
         path: require.resolve('path-browserify'),

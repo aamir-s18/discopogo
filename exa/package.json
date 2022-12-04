@@ -20,6 +20,8 @@
     "axios": "0",
     "core-js": "3",
     "crypto-browserify": "3",
+    "d3": "^7.7.0",
+    "fs": "^0.0.1-security",
     "immutable": "4",
     "jshashes": "1",
     "mock-aws-s3": "4",
@@ -37,6 +39,7 @@
     "vue-i18n": "9",
     "vue-router": "4",
     "vue3-apexcharts": "1",
+    "vue3-storage": "^0.1.11",
     "yup": "0"
   },
   "devDependencies": {
@@ -51,5 +54,10 @@
     "typescript": "4",
     "vue-cli-plugin-tailwind": "3",
     "vue-loader-v16": "npm:vue-loader@16"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   }
 }
