@@ -35,7 +35,7 @@ Please ensure to have `nvm` and `npm` installed. It can happen that you get erro
 
 ## How to train
 
-In the folder [`exa`](exa/) you can find the implementation of our project. For every client a Disco client is created, which can communicate with a running server. To train the model visit the website and visit "Train Model" or `/train`. Select the dummy CSV from this repository and let the magic happen. Currently it's set to support federated learning.
+In the folder [`exa`](exa/) you can find the implementation of our project. For every resaurant, a Disco client is created, which can communicate with the running server. To train the model, visit the website and use `Train Model` button or use url path `/train`. Select the dummy CSV from this repository and let the magic happen. Currently it's set to support federated learning.
 
 ## Some details about implementation
 
