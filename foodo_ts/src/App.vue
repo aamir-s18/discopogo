@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import ChartView from './components/ChartView.vue'
-import HomeView from './views/HomeView.vue';
+import ChartsContainer from './components/ChartsContainer.vue'
+import DropField from './components/DropField.vue';
 
 </script>
 
@@ -10,7 +10,8 @@ import HomeView from './views/HomeView.vue';
     <h1>👋 Hey foodlab alpine! </h1>   
   </header>
 
-    <ChartView />
+    <ChartsContainer />
+    <DropField />
 </template>
 
 <style scoped>
@@ -18,36 +19,5 @@ header {
   line-height: 1.5;
   max-height: 100vh;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
 
 </style>
