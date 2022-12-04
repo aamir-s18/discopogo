@@ -1,7 +1,4 @@
-# Server-related files
-model.json
-weights.bin
-weights_round*.json
+
 
 # TODO be more specific
 milestones/

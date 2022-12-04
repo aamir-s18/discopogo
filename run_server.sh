@@ -6,6 +6,7 @@ nvm use
 npm ci
 
 cd discojs
+npm ci
 ./build.sh
 
 cd ../server
