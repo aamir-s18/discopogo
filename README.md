@@ -32,4 +32,13 @@ npm link ../discojs/discojs-node
 npm run dev
 ```
 
+## How to train
+
+In the folder [`exa`](exa/) you can find the implementation of our project. For every client a Disco client is created, which can communicate with a running server. To train the model visit the website and visit "Train Model" or `/train`. Select the dummy CSV from this repository and let the magic happen. Currently it's set to support federated learning.
+
+## Some details about implementation
+
+We took some part of the [web-client](https://github.com/epfml/disco/tree/develop/web-client) to make this project possible. The training is working and is tested with multiple inputs for a simple linear regression model. The frontend is MVP to show what can be possible with our project and how we can use Disco for non-traditional and real life related tasks. We used Vue and TypeScript to have maximal compatibility with Disco. Also the model is here a MVP with dummy data, to proof that Disco could work in this setting and is capable of solving tasks outside of the scientific environment and can provide a value to economy and sustainability.
+
+
 
