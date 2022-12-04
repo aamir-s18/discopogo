@@ -10,6 +10,16 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
+  <div class="header">
+    <div class="namecontainer">
+      <h1 class="name">PredicTable</h1>
+    </div>
+    <div class="header-right">
+      <a class="active" href="/">Home</a>
+      <a href="/train">Train</a>
+      <a href="">About</a>
+    </div>
+  </div>
   <div class="container is-max-desktop">
 
     <HelloWorld />
@@ -36,6 +46,47 @@ import HelloWorld from './components/HelloWorld.vue'
   top: 0;
   right: 0;
 }
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 8px 10px;
+}
+
+.namecontainer {
+  display: inline-block; 
+  margin-left: 10px;
+  padding: 3px 0px;
+  text-align: center;
+}
+
+.header-right {
+  display: inline-block; 
+  float: right;
+  margin-right: 10px;
+  
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 3px 0px;
+  font-size: 18px;
+  margin-left: 8px;
+  margin-right: 15px;
+  border-radius: 4px;
+}
+
+.name {
+  color: darkolivegreen;
+  font-family:'Trebuchet MS';
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0 auto;
+
+}
+
 
 .center {
   text-align: center;
