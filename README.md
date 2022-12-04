@@ -1,10 +1,11 @@
-# **DISCO** - _Dis_&#8203;tributed _Co_&#8203;llaborative Machine Learning
+# **PredicTable** 
 
 
+We created PredicTable, a web application for resaurant to predict future sales, to help reduce overproduction and create a menu plan tailored for the customers.
 
-DISCO leverages federated :star2: and decentralized :sparkles: learning to allow several data owners to collaboratively build machine learning models without sharing any original data.
+PredicTable works inside **DISCO**,to run federated learning without sharing any original data from the resaurant, so that they can keep their privacy.
 
-The latest version is always running on the following link, [directly in your browser](https://epfml.github.io/disco/), for web and mobile:
+
 
  :man_dancing: [https://epfml.github.io/disco/](https://epfml.github.io/disco/) :man_dancing:
 
