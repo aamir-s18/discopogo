@@ -22,7 +22,8 @@ import HelloWorld from './components/HelloWorld.vue'
     </RouterView>
     <div class="columns">
       <div class="column is-full">
-        <p class="mt-6 mb-4 has-text-centered">Made with <a href="">🪩</a> in Lausanne.</p>
+        <p class="mt-6 mb-4 has-text-centered">Made with <a href="https://github.com/epfml/disco">🪩</a> in Lausanne.
+        </p>
       </div>
 
     </div>
