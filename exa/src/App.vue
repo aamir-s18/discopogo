@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
 
 
 </script>
@@ -12,7 +12,7 @@ import HelloWorld from './components/HelloWorld.vue'
 <template>
   <div class="container is-max-desktop">
 
-    <HelloWorld />
+    <Header />
 
     <RouterView v-slot="{ Component }">
       <Component :is="Component"> </Component>
